@@ -1,0 +1,29 @@
+{
+  "name": "jwtexpressmongodb",
+  "version": "1.0.0",
+  "description": "Authentication using Node.js Express MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js --exec babel-node -e js",
+    "debug": "set DEBUG=express: * &nodemon ./index.js --exec babel-node -e js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscarMartinezMalo/JWTexpressMongoDB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oscarMartinezMalo/JWTexpressMongoDB/issues"
+  },
+  "homepage": "https://github.com/oscarMartinezMalo/JWTexpressMongoDB#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
