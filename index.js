@@ -1,9 +1,22 @@
 import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import authRoute from './routes/auth' // Import Routes
 
-// Import Routes
-import authRoute from './routes/auth'
+dotenv.config();
+
+// Connecting to mongoDB
+// Get the DB_CONNECT variable from the environment
+mongoose.connect( process.env.DB_CONNECT,
+    { useNewUrlParser: true },
+    () => {
+        console.log("Connected to DB");
+    });
 
 const app = express();
+
+// Middlewares
+app.use( express.json());
 
 // Routes middlewares
 app.use('/auth', authRoute);

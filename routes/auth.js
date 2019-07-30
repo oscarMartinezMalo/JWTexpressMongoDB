@@ -1,8 +1,22 @@
 import express from 'express';
 const router = express.Router();
+import User from '../model/User';
 
-router.get('/register', function (req, res) {
-    res.send('Register successfully')
-  })
+router.post('/register', async function (req, res) {
+
+  const user = new User({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password
+  });
+
+  try {
+    const savedUser = await user.save();
+    res.send(savedUser);
+  } catch (error) {
+    res.status(400).send(err);
+  }
+
+});
 
 module.exports = router;
