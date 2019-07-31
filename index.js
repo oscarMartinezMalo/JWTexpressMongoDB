@@ -1,7 +1,10 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import authRoute from './routes/auth' // Import Routes
+
+ // Import Routes
+import authRoute from './routes/auth'
+import postRoute from './routes/post'
 
 dotenv.config();
 
@@ -20,6 +23,7 @@ app.use( express.json());
 
 // Routes middlewares
 app.use('/auth', authRoute);
+app.use('/api', postRoute);
 
 // Assign a port from the environment variable
 const PORT = process.env.PORT || 3000;

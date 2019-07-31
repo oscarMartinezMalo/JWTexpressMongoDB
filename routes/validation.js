@@ -4,11 +4,12 @@ import Joi from '@hapi/joi';
 function registerValidation( data ) {
     const schema = {
         name: Joi.string()
-            .min(6)
+            .min(3)
             .required(),
         email: Joi.string()
             .min(6)
-            .required(),
+            .required()
+            .email(),
         password: Joi.string()
             .min(6)
             .required()
@@ -22,7 +23,8 @@ function loginValidation( data ) {
     const schema = {
         email: Joi.string()
             .min(6)
-            .required(),
+            .required()
+            .email(),
         password: Joi.string()
             .min(6)
             .required()
